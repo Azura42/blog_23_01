@@ -13,7 +13,7 @@ class Block(models.Model):
     slug = models.SlugField(max_length=250)
     author = models.ForeignKey(User, verbose_name="Author", on_delete=models.CASCADE)
     body = models.TextField("Inhalt")
-    publisched = models.DateTimeField("Veröffentlicht", default = timezone.now)
+    published = models.DateTimeField("Veröffentlicht", default = timezone.now)
     created = models.DateTimeField("Erstellt", auto_now=False, auto_now_add=True)
     updated = models.DateTimeField("Geändert", auto_now=True, auto_now_add=False)
     status = models.CharField("Status", max_length=2, choices=Status.choices, default=Status.DRAFT)
